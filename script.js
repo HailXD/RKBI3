@@ -9,33 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="action-btn bot selected">BOT</button>
                 <button class="action-btn sld">SLD</button>
             </td>
-            <td><input type="number" value="100"></td>
-            <td><input type="number" placeholder="Enter price"></td>
+            <td><input type="text" placeholder="100"></td>
+            <td><input type="text" placeholder="123.45"></td>
             <td>USD</td>
-            <td><input type="datetime-local"></td>
-            <td><input type="number" placeholder="Enter commission"></td>
-            <td><input type="number" placeholder="Enter P&L"></td>
+            <td><input type="text" placeholder="JUN 24 21:06:50"></td>
+            <td><input type="text" placeholder="1.25"></td>
+            <td><input type="text" placeholder="50.00"></td>
         `;
         tbody.appendChild(newRow);
         addEventListenersToRow(newRow);
-    };
-
-    const formatTime = (input) => {
-        if (!input.value) return;
-        const date = new Date(input.value);
-        const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
-        const day = date.getDate();
-        const time = date.toTimeString().split(' ')[0];
-        const display = input.parentElement.querySelector('.time-display');
-        if (display) {
-            display.textContent = `${month} ${day} ${time}`;
-        } else {
-            const newDisplay = document.createElement('span');
-            newDisplay.className = 'time-display';
-            newDisplay.textContent = `${month} ${day} ${time}`;
-            input.style.display = 'none';
-            input.parentElement.appendChild(newDisplay);
-        }
     };
 
     const addEventListenersToRow = (row) => {
@@ -44,10 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.addEventListener('input', () => {
                 
             });
-
-            if (input.type === 'datetime-local') {
-                input.addEventListener('change', () => formatTime(input));
-            }
         });
 
         const actionButtons = row.querySelectorAll('.action-btn');
