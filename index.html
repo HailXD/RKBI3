@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Table</title>
+    <link rel="stylesheet" href="style.css">
+</html>
+<body>
+    <table id="tradeTable">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Currency</th>
+                <th>Time</th>
+                <th>Commission</th>
+                <th>P&L</th>
+            <tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <button class="action-btn bot selected">BOT</button>
+                    <button class="action-btn sld">SLD</button>
+                </td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number" placeholder="Enter price"></td>
+                <td>USD</td>
+                <td><input type="datetime-local"></td>
+                <td><input type="number" placeholder="Enter commission"></td>
+                <td><input type="number" placeholder="Enter P&L"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
